@@ -1,6 +1,7 @@
 from csv import reader
 import random
 
+
 def tasks():
     counter = 0
     with open('books.csv', 'r', encoding='windows-1251') as csvfile:
@@ -19,7 +20,8 @@ def tasks():
         for row in table:
             author, author_fio, year = row[3], row[4], row[6][6:10]
             if (year == '2015' or year == '2018') and (search == author or search == author_fio):
-                print(f"Найдена кника {year} года. Автор: {author_fio}; Название книги: {row[1]}; Формат книги: {row[2]}")
+                print(f"Найдена кника {year} года. Автор: {author_fio}; Название книги: {row[1]};"
+                      f" Формат книги: {row[2]}")
                 flag = 1
         if flag == 0:
             print('Nothing found.')
